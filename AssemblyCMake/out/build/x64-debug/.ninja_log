@@ -1,0 +1,10 @@
+# ninja log v6
+15	644	8118602954499424	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/AssemblyCMake.cpp.obj	85b0ac1712f6264b
+644	789	8118602960792291	AssemblyCMake/AssemblyCMake.exe	3c7a4a636e0146ab
+4	16	8118602589951365	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/asm_basics.asm.obj	2367d3984333f26e
+11	25	8118629028884738	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/asm_basics.asm.obj	2367d3984333f26e
+17	1569	8118629029020750	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/Chrono.cpp.obj	e1ef278c2ad71d16
+6	1571	8118629028884738	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/AssemblyCMake.cpp.obj	85b0ac1712f6264b
+1571	1731	8118629044575920	AssemblyCMake/AssemblyCMake.exe	8615a8f6efc9a3f4
+17	1215	8118629234331091	AssemblyCMake/CMakeFiles/AssemblyCMake.dir/AssemblyCMake.cpp.obj	85b0ac1712f6264b
+1216	1370	8118629246378651	AssemblyCMake/AssemblyCMake.exe	8615a8f6efc9a3f4
