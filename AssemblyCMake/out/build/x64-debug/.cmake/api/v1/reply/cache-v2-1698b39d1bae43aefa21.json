@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug"
+			"value" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug"
 		},
 		{
 			"name" : "AssemblyCMake_IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/rboone/source/repos/AssemblyCMake"
+			"value" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -199,7 +199,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug"
+			"value" : "c:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -283,11 +283,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
 			"type" : "STRING",
-			"value" : "cl.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/bin/Hostx64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -395,11 +395,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
 			"type" : "STRING",
-			"value" : "cl.exe"
+			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/bin/Hostx64/x64/cl.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -719,7 +719,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/rboone/source/repos/AssemblyCMake"
+			"value" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -731,7 +731,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/rboone/source/repos/AssemblyCMake/out/install/x64-debug"
+			"value" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/install/x64-debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -969,6 +969,10 @@
 			"name" : "CMAKE_RANLIB",
 			"properties" : 
 			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
 				{
 					"name" : "HELPSTRING",
 					"value" : "noop for ranlib"

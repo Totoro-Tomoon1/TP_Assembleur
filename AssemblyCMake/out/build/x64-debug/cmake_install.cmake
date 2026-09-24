@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/rboone/source/repos/AssemblyCMake
+# Install script for directory: C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/rboone/source/repos/AssemblyCMake/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/install/x64-debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,14 +39,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/AssemblyCMake/cmake_install.cmake")
+  include("C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/AssemblyCMake/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/install_local_manifest.txt"
+  file(WRITE "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -62,6 +62,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

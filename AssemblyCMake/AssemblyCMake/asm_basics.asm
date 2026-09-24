@@ -36,4 +36,71 @@ end_branch:
     ret
 asm_find ENDP
 
+asm_calc PROC
+    
+    cmp rcx, 0
+    je br_add
+    cmp rcx, 1
+    je br_sub
+    cmp rcx, 2
+    je br_mul
+    cmp rcx, 3
+    je br_div
+
+br_add:
+    mov rax, rdx
+    add rax, r8
+    ret
+
+br_sub:
+    mov rax, rdx
+    sub rax, r8
+    ret
+
+br_mul:
+    mov rax, rdx
+    imul rax, r8
+    ret
+
+br_div:
+    mov rax, rdx
+    cqo
+    idiv r8
+    ret
+
+asm_calc ENDP
+
+asm_calc_f PROC
+    
+    cmp rax, 0
+    je br_add
+    cmp rcx, 1
+    je br_sub
+    cmp rcx, 2
+    je br_mul
+    cmp rcx, 3
+    je br_div
+
+br_add:
+    movsd xmm0, xmm1
+    addsd xmm0, xmm2
+    ret
+
+br_sub:
+    movsd xmm0, xmm1
+    subsd xmm0, xmm2
+    ret
+
+br_mul:
+    movsd xmm0, xmm1
+    mulsd xmm0, xmm2
+    ret
+
+br_div:
+    movsd xmm0, xmm1
+    divsd xmm0, xmm2
+    ret
+
+asm_calc_f ENDP
+
 END

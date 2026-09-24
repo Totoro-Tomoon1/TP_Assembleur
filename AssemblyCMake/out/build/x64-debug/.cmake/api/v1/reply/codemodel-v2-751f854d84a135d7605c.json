@@ -65,8 +65,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug",
-		"source" : "C:/Users/rboone/source/repos/AssemblyCMake"
+		"build" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug",
+		"source" : "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake"
 	},
 	"version" : 
 	{

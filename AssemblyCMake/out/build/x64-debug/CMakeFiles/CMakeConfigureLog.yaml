@@ -39,7 +39,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/3.31.6-msvc6/CompilerIdC/CMakeCCompilerId.exe
+        C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/3.31.6-msvc6/CompilerIdC/CMakeCCompilerId.exe
       
   -
     kind: "message-v1"
@@ -51,7 +51,7 @@ events:
     message: |
       Detecting C compiler /showIncludes prefix:
         main.c
-        Remarque : inclusion du fichier :  C:\\Users\\rboone\\source\\repos\\AssemblyCMake\\out\\build\\x64-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Remarque : inclusion du fichier :  C:\\Users\\rboone\\Documents\\GitHub\\TP_Assembleur\\AssemblyCMake\\out\\build\\x64-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Remarque : inclusion du fichier :  "
   -
@@ -85,7 +85,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CMakeCXXCompilerId.exe
+        C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CMakeCXXCompilerId.exe
       
   -
     kind: "message-v1"
@@ -97,7 +97,7 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Remarque : inclusion du fichier :  C:\\Users\\rboone\\source\\repos\\AssemblyCMake\\out\\build\\x64-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Remarque : inclusion du fichier :  C:\\Users\\rboone\\Documents\\GitHub\\TP_Assembleur\\AssemblyCMake\\out\\build\\x64-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Remarque : inclusion du fichier :  "
   -
@@ -109,8 +109,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-jgu0mh"
-      binary: "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-jgu0mh"
+      source: "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pczrjp"
+      binary: "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pczrjp"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
@@ -120,11 +120,11 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-jgu0mh'
+        Change Dir: 'C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-pczrjp'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_b22c8
-        [1/2] "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_b22c8.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_b22c8.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
-        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1938 --intdir=CMakeFiles\\cmTC_b22c8.dir --rc="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\rc.exe" --mt="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\mt.exe" --manifests  -- "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_b22c8.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_b22c8.exe /implib:cmTC_b22c8.lib /pdb:cmTC_b22c8.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_c2cec
+        [1/2] "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe"  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_c2cec.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_c2cec.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1938 --intdir=CMakeFiles\\cmTC_c2cec.dir --rc="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\rc.exe" --mt="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\mt.exe" --manifests  -- "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_c2cec.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_c2cec.exe /implib:cmTC_c2cec.lib /pdb:cmTC_c2cec.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -152,8 +152,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-558qyk"
-      binary: "C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-558qyk"
+      source: "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-v31ex1"
+      binary: "C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-v31ex1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Ob0 /Od /RTC1"
@@ -164,11 +164,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/rboone/source/repos/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-558qyk'
+        Change Dir: 'C:/Users/rboone/Documents/GitHub/TP_Assembleur/AssemblyCMake/out/build/x64-debug/CMakeFiles/CMakeScratch/TryCompile-v31ex1'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_65e3a
-        [1/2] "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe"  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_65e3a.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_65e3a.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1938 --intdir=CMakeFiles\\cmTC_65e3a.dir --rc="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\rc.exe" --mt="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\mt.exe" --manifests  -- "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_65e3a.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_65e3a.exe /implib:cmTC_65e3a.lib /pdb:cmTC_65e3a.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_6660b
+        [1/2] "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe"  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Ob0 /Od /RTC1 -Zi /showIncludes /FoCMakeFiles\\cmTC_6660b.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_6660b.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1938 --intdir=CMakeFiles\\cmTC_6660b.dir --rc="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\rc.exe" --mt="C:\\PROGRA~2\\Windows Kits\\10\\bin\\10.0.26100.0\\x64\\mt.exe" --manifests  -- "C:\\PROGRA~1\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\link.exe" /nologo CMakeFiles\\cmTC_6660b.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_6660b.exe /implib:cmTC_6660b.lib /pdb:cmTC_6660b.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -187,17 +187,13 @@ events:
         implicit fwks: []
       
       
-...
-
----
-events:
   -
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -211,7 +207,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -225,7 +221,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is Clang using "--version" did not match "(clang version)":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -239,7 +235,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is ARMClang using "--version" did not match "armclang":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -253,7 +249,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is OrangeC using "--version" did not match "occ \\(OrangeC\\) Version":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -267,7 +263,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is HP using "-V" did not match "HP C":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -281,7 +277,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is Intel using "--version" did not match "(ICC)":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -295,7 +291,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is IntelLLVM using "--version" did not match "(Intel[^
       ]+oneAPI)":
@@ -310,7 +306,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is SunPro using "-V" did not match "Sun C":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -324,7 +320,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is XL using "-qversion" did not match "XL C":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
@@ -338,7 +334,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
       - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineASM_MASMCompiler.cmake:17 (include)"
-      - "AssemblyCMake/CMakeLists.txt:8 (enable_language)"
+      - "CMakeLists.txt:14 (enable_language)"
     message: |
       Checking whether the ASM_MASM compiler is MSVC using "-?" matched "Microsoft":
       Microsoft (R) Macro Assembler (x64) Version 14.38.33145.0
