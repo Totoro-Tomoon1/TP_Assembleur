@@ -30,6 +30,14 @@
 #include "basisu_miniz.h"
 #include "pvpngreader.h"
 
+#if defined(__clang__)
+#define NO_VECTORIZE_FUNC __attribute__((optnone))
+#elif defined(__GNUC__)
+#define NO_VECTORIZE_FUNC __attribute__((optimize("no-tree-vectorize,no-tree-slp-vectorize")))
+#else
+#define NO_VECTORIZE_FUNC
+#endif
+
 typedef std::vector<uint8_t> uint8_vec;
 
 typedef uint64_t timer_ticks;
@@ -973,6 +981,9 @@ static int training_mode(const char* pFilename)
 #endif
 
 void grayscale_sse(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pixels);
+void grayscale_sse2(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pixels);
+void miror(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pixels);
+void grayscale_scal(uint32_t total_source_pixels, const color_rgba* pSource_pixels32, uint8_vec* gray_scalar);
 
 int main(int arg_c, char** arg_v)
 {
@@ -1186,75 +1197,67 @@ int main(int arg_c, char** arg_v)
 
 	uint8_vec gray_scalar(total_source_pixels);
 	uint8_vec gray_simd(total_source_pixels);
+	uint8_vec miror_simd(total_source_pixels * 4);
 
 	const uint32_t NUM_TIMES_TO_GRAY = 10;
 
-	double gray_scalar_time = 1e+9;
-	for (uint32_t t = 0; t < total_source_pixels; t++)
-	{
-		tm.start();
-		for (uint32_t i = 0; i < total_source_pixels; i++)
-		{
-			uint32_t r = pSource_pixels32[i].m_c[0];
-			uint32_t g = pSource_pixels32[i].m_c[1];
-			uint32_t b = pSource_pixels32[i].m_c[2];
-
-			gray_scalar[i] = (uint8_t)((r * 77 + g * 151 + b * 28) >> 8);
-		}		
-		gray_scalar_time = minimum(gray_scalar_time, tm.get_elapsed_secs());
-	}
+	/*double gray_scalar_time = 1e+9;
+	tm.start();
+	grayscale_scal(total_source_pixels, pSource_pixels32, &gray_scalar);
+	gray_scalar_time = minimum(gray_scalar_time, tm.get_elapsed_secs());*/
 	
 	double gray_simd_time = 1e+9;
-	for (uint32_t t = 0; t < NUM_TIMES_TO_GRAY; t++)
-	{
-		tm.start();
-		grayscale_sse(pSource_image_buffer, gray_simd.data(), total_source_pixels);
-		gray_simd_time = minimum(gray_simd_time, tm.get_elapsed_secs());
-	}
+	tm.start();
+	miror(pSource_image_buffer, miror_simd.data(), total_source_pixels);
+	gray_simd_time = minimum(gray_simd_time, tm.get_elapsed_secs());
+
+	//miror
 
 	if (!csv_flag)
 	{
-		printf("Grayscale scalar : %4.6f secs, %4.3f MP/sec\n",
-			gray_scalar_time, total_source_pixels / (1024.0f * 1024.0f) / gray_scalar_time);
+		/*printf("Grayscale scalar : %4.6f secs, %4.3f MP/sec\n",
+			gray_scalar_time, total_source_pixels / (1024.0f * 1024.0f) / gray_scalar_time);*/
 		printf("Grayscale SIMD: %4.6f secs, %4.3f MP/sec\n",
 			gray_simd_time, total_source_pixels / (1024.0f * 1024.0f) / gray_simd_time);
+		/*float dif = gray_scalar_time / gray_simd_time;
+		printf("Diff : %4.6f\n", dif);*/
 
 		printf("** Encoding:\n");
 	}
 
-	if (memcmp(gray_scalar.data(), gray_simd.data(), total_source_pixels) != 0)
-	{
-		uint32_t first_bad = total_source_pixels;
-		for (uint32_t i = 0; i < total_source_pixels; i++)
-		{
-			if (gray_scalar[i] != gray_simd[i])
-			{
-				first_bad = i;
-				break;
-			}
-		}
-		fprintf(stderr, "Grayscale SIMD verification failed! Premier pixel different: %u (scalar=%u, simd=%u) sur %u\n",
-			first_bad, gray_scalar[first_bad], gray_simd[first_bad], total_source_pixels);
+	//if (memcmp(gray_scalar.data(), gray_simd.data(), total_source_pixels) != 0)
+	//{
+	//	uint32_t first_bad = total_source_pixels;
+	//	for (uint32_t i = 0; i < total_source_pixels; i++)
+	//	{
+	//		if (gray_scalar[i] != gray_simd[i])
+	//		{
+	//			first_bad = i;
+	//			break;
+	//		}
+	//	}
+	//	fprintf(stderr, "Grayscale SIMD verification failed! Premier pixel different: %u (scalar=%u, simd=%u) sur %u\n",
+	//		first_bad, gray_scalar[first_bad], gray_simd[first_bad], total_source_pixels);
 
-		// Affiche aussi le RGBA source de ce pixel pour comparer à la main
-		fprintf(stderr, "  RGBA source: R=%u G=%u B=%u A=%u\n",
-			pSource_pixels32[first_bad].m_c[0], pSource_pixels32[first_bad].m_c[1],
-			pSource_pixels32[first_bad].m_c[2], pSource_pixels32[first_bad].m_c[3]);
+	//	// Affiche aussi le RGBA source de ce pixel pour comparer à la main
+	//	fprintf(stderr, "  RGBA source: R=%u G=%u B=%u A=%u\n",
+	//		pSource_pixels32[first_bad].m_c[0], pSource_pixels32[first_bad].m_c[1],
+	//		pSource_pixels32[first_bad].m_c[2], pSource_pixels32[first_bad].m_c[3]);
 
-		return EXIT_FAILURE;
+	//	return EXIT_FAILURE;
 
-		fprintf(stderr, "Grayscale SIMD verification failed!\n");
-		return EXIT_FAILURE;
-	}
+	//	fprintf(stderr, "Grayscale SIMD verification failed!\n");
+	//	return EXIT_FAILURE;
+	//}
 
 	if (!csv_flag)
 	{
-		uint8_vec gray_rgb(total_source_pixels * 3);
+		uint8_vec gray_rgb(total_source_pixels * 4);
 		for (uint32_t i = 0; i < total_source_pixels; i++)
 		{
-			gray_rgb[i * 3 + 0] = gray_scalar[i];
-			gray_rgb[i * 3 + 1] = gray_scalar[i];
-			gray_rgb[i * 3 + 2] = gray_scalar[i];
+			gray_rgb[i * 4 + 0] = miror_simd[i];
+			gray_rgb[i * 4 + 1] = miror_simd[i];
+			gray_rgb[i * 4 + 2] = miror_simd[i];
 		}
 
 		std::vector<uint8_t> gray_png;
@@ -1715,37 +1718,57 @@ int main(int arg_c, char** arg_v)
 	return EXIT_SUCCESS;
 }
 
+NO_VECTORIZE_FUNC
+void grayscale_scal(uint32_t total_source_pixels, const color_rgba* pSource_pixels32, uint8_vec* gray_scalar)
+{
+	for (uint32_t i = 0; i < total_source_pixels; i++)
+	{
+		uint32_t r = pSource_pixels32[i].m_c[0];
+		uint32_t g = pSource_pixels32[i].m_c[1];
+		uint32_t b = pSource_pixels32[i].m_c[2];
+
+		(*gray_scalar)[i] = (uint8_t)((r * 77 + g * 151 + b * 28) >> 8);
+	}
+}
+
 #include <immintrin.h>
 
 void grayscale_sse(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pixels)
 {
-	const __m128i wr = _mm_set1_epi32(77);
+	//constante
+	const __m128i wr = _mm_set1_epi32(77); //dupliquer en x4 pour traiter 4 pixels a la fois
 	const __m128i wg = _mm_set1_epi32(151);
 	const __m128i wb = _mm_set1_epi32(28);
 
+	//pour recuperer rgba de 4 pixels
 	const __m128i shufR = _mm_setr_epi8(0, 4, 8, 12, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128);
 	const __m128i shufG = _mm_setr_epi8(1, 5, 9, 13, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128);
 	const __m128i shufB = _mm_setr_epi8(2, 6, 10, 14, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128, -128);
 
 	uint32_t i = 0;
-	for (; i + 4 <= num_pixels; i += 4)
+	for (; i + 4 <= num_pixels; i += 4) //boucle par 4
 	{
-		__m128i px = _mm_loadu_si128((const __m128i*)(pSrc_rgba + i * 4));
+		__m128i px = _mm_loadu_si128((const __m128i*)(pSrc_rgba + i * 4)); //recuper 4 pixels
 
+		//recuper r g b de chaqu'un des 4 pixels
 		__m128i r8 = _mm_shuffle_epi8(px, shufR);
 		__m128i g8 = _mm_shuffle_epi8(px, shufG);
 		__m128i b8 = _mm_shuffle_epi8(px, shufB);
 
+		//8->32
 		__m128i r32 = _mm_cvtepu8_epi32(r8);
 		__m128i g32 = _mm_cvtepu8_epi32(g8);
 		__m128i b32 = _mm_cvtepu8_epi32(b8);
 
+		//rr*r + 151*g + 28*b
 		__m128i sum = _mm_add_epi32(
 			_mm_add_epi32(_mm_mullo_epi32(r32, wr), _mm_mullo_epi32(g32, wg)),
 			_mm_mullo_epi32(b32, wb));
 
+		//32
 		sum = _mm_srli_epi32(sum, 8);
 
+		//32->16->8
 		__m128i sum16 = _mm_packus_epi32(sum, sum);
 		__m128i sum8 = _mm_packus_epi16(sum16, sum16);
 
@@ -1756,5 +1779,58 @@ void grayscale_sse(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pi
 	{
 		const uint8_t* p = pSrc_rgba + i * 4;
 		pDst_gray[i] = (uint8_t)((p[0] * 77 + p[1] * 151 + p[2] * 28) >> 8);
+	}
+}
+
+//version plus rapide 
+static inline __m128i gray4(__m128i px, __m128i wrb, __m128i wg)
+{
+	__m128i rb = _mm_and_si128(px, _mm_set1_epi32(0x00FF00FF));//recuper r et b
+	__m128i ga = _mm_srli_epi16(px, 8);//recuper g et a
+
+	// (rgbg + rb) + (gg + wg)
+	__m128i s = _mm_add_epi32(_mm_madd_epi16(rb, wrb),
+		_mm_madd_epi16(ga, wg));
+
+	//4 valeurs de gris
+	return _mm_srli_epi32(s, 8);
+}
+
+void grayscale_sse2(const uint8_t* pSrc_rgba, uint8_t* pDst_gray, uint32_t num_pixels)
+{
+	const __m128i wrb = _mm_set1_epi32((28 << 77) | 0); //stock r et b 
+	const __m128i wg = _mm_set1_epi32(151); //stock g
+
+	uint32_t i = 0;
+	for (; i + 16 <= num_pixels; i += 16) //16 pixels par 16 pixels
+	{
+		const __m128i* p = (const __m128i*)(pSrc_rgba + i * 4);
+		__m128i a = gray4(_mm_loadu_si128(p + 0), wrb, wg); //4 pixels
+		__m128i b = gray4(_mm_loadu_si128(p + 1), wrb, wg); //4 pixels...
+		__m128i c = gray4(_mm_loadu_si128(p + 2), wrb, wg);
+		__m128i d = gray4(_mm_loadu_si128(p + 3), wrb, wg);
+
+		__m128i ab = _mm_packs_epi32(a, b);//8 x 16
+		__m128i cd = _mm_packs_epi32(c, d);//8 x 16
+
+		_mm_storeu_si128((__m128i*)(pDst_gray + i), _mm_packus_epi16(ab, cd));//16 x 8
+	}
+
+	for (; i < num_pixels; i++)
+	{
+		const uint8_t* p = pSrc_rgba + i * 4;
+		pDst_gray[i] = (uint8_t)((p[0] * 77 + p[1] * 151 + p[2] * 28) >> 8);
+	}
+}
+
+void miror(const uint8_t* pSrc_rgba, uint8_t* pDst_miror, uint32_t num_pixels)
+{
+	uint32_t i = 0;
+	for (; i + 4 <= num_pixels; i += 4)
+	{
+		const __m128i* p = (const __m128i*)(pSrc_rgba + (num_pixels - i - 4) * 4);
+		__m128i miror = _mm_shuffle_epi32(_mm_loadu_si128(p), _MM_SHUFFLE(0, 1, 2, 3));
+
+		_mm_storeu_si128((__m128i*)(pDst_miror + i * 4), miror);
 	}
 }
